@@ -36,12 +36,6 @@
         </dependency>
         
         <dependency>
-            <groupId>io.github.cardinal.alpha.spring.type.generator</groupId>
-            <artifactId>type-generator-spring-boot-starter</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-        
-        <dependency>
             <groupId>net.bytebuddy</groupId>
             <artifactId>byte-buddy</artifactId>
             <version>1.10.22</version>
