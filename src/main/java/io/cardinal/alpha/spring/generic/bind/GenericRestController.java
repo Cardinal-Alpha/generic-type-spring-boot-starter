@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2022 Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * Copyright (c) 2022 Cardinal Alpha
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,17 +21,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.generator.action.type;
+package io.cardinal.alpha.spring.generic.bind;
 
-import java.util.List;
-import net.bytebuddy.dynamic.DynamicType;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Repeatable;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import org.springframework.stereotype.Component;
+import io.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericRestController;
 
 /**
  *
  * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
  */
-public interface MultipleBeanSubtypeDefiner {
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Repeatable(MultipleGenericRestController.class)
+@Component
+public @interface GenericRestController {
     
-    List<DynamicType.Builder<?>> defineSubtypes(Class<?> beanCls);
+    Class<?>[] typeParameters();
+    
+    String path();
     
 }

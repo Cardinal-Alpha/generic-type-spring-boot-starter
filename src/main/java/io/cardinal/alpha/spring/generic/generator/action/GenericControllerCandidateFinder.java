@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2022 Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * Copyright (c) 2022 Cardinal Alpha
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,21 +21,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.generator.action;
+package io.cardinal.alpha.spring.generic.generator.action;
 
-import io.github.cardinal.alpha.spring.generic.bind.GenericComponent;
-import io.github.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericComponent;
-import io.github.cardinal.alpha.spring.generic.generator.action.type.TargetBeansClassExtractor;
 import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
+import io.cardinal.alpha.spring.generic.bind.GenericRestController;
+import io.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericRestController;
+import io.cardinal.alpha.spring.generic.generator.action.type.TargetBeansClassExtractor;
 
 /**
  *
  * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
  */
-public class GenericComponentCandidateFinder implements TargetBeansClassExtractor{
+public class GenericControllerCandidateFinder implements TargetBeansClassExtractor{
     
     private DefaultListableBeanFactory beanRegistry;
     
@@ -54,9 +54,9 @@ public class GenericComponentCandidateFinder implements TargetBeansClassExtracto
     @Override
     public List<Class<?>> extractBeanCls(DefaultListableBeanFactory bf) {
         beanRegistry = bf;
-        List<Class<?>> processTarget = getUniqueBeansClassWithAnnotation(GenericComponent.class);
+        List<Class<?>> processTarget = getUniqueBeansClassWithAnnotation(GenericRestController.class);
         if(processTarget.size() == 0)
-            processTarget = getUniqueBeansClassWithAnnotation(MultipleGenericComponent.class);
+            processTarget = getUniqueBeansClassWithAnnotation(MultipleGenericRestController.class);
         processTarget.forEach(cls->{
             preRegisterCleanup(cls);
         });

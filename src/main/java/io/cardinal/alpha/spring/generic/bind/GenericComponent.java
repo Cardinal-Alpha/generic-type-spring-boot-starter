@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2022 Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * Copyright (c) 2022 Cardinal Alpha
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,22 +21,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.exception;
+package io.cardinal.alpha.spring.generic.bind;
 
-import org.springframework.beans.BeansException;
+import io.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericComponent;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Repeatable;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
  */
-public class RuntimeTypeGeneratorException extends BeansException{
-
-    public RuntimeTypeGeneratorException(String msg) {
-        super(msg);
-    }
-
-    public RuntimeTypeGeneratorException(String msg, Throwable cause) {
-        super(msg, cause);
-    }
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Repeatable(MultipleGenericComponent.class)
+@Component
+public @interface GenericComponent {
+    
+    Class<?>[] typeParameters();
     
 }

@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright (c) 2022 Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * Copyright (c) 2022 Cardinal Alpha
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,11 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.generator;
+package io.cardinal.alpha.spring.generic.generator;
 
-import io.github.cardinal.alpha.spring.generic.exception.RuntimeTypeGeneratorException;
-import io.github.cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
-import io.github.cardinal.alpha.spring.generic.generator.action.type.TargetBeansClassExtractor;
+import io.cardinal.alpha.spring.generic.exception.RuntimeTypeGeneratorException;
+import io.cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
+import io.cardinal.alpha.spring.generic.generator.action.type.TargetBeansClassExtractor;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
 import org.springframework.beans.BeansException;
