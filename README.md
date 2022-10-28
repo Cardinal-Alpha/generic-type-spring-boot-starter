@@ -5,7 +5,7 @@ This starter is designed to be used with generic type design pattern, which coul
 Installation can be easily done by adding dependency tag on your Maven project **pom.xml** (replace or set version accordingly)
 ```
 <dependency>
-    <groupId>io.cardinal-alpha</groupId>
+    <groupId>io.github.cardinal-alpha</groupId>
     <artifactId>generic-type-spring-boot-starter</artifactId>
     <version>${version}</version>
 </dependency>
