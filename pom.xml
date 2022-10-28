@@ -42,4 +42,30 @@
         </dependency>
 
     </dependencies>
+    <name>Generic Type Spring Boot Starter</name>
+    <description>This starter is designed to be used with generic type design pattern, which could help when you have many similar service flow but different data type to handle</description>
+    <url>https://github.com/Cardinal-Alpha/generic-type-spring-boot-starter</url>
+    
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+    
+    <developers>
+        <developer>
+            <name>Cardinal Alpha</name>
+            <email>renaldi96.aldi@gmail.com</email>
+            <organization>GitHub</organization>
+            <organizationUrl>https://github.com/Cardinal-Alpha</organizationUrl>
+        </developer>
+    </developers>
+    
+    <scm>
+        <connection>scm:git:git://github.com/Cardinal-Alpha/generic-type-spring-boot-starter.git</connection>
+        <developerConnection>scm:git:ssh://github.com:Cardinal-Alpha/generic-type-spring-boot-starter.git</developerConnection>
+        <url>https://github.com/Cardinal-Alpha/generic-type-spring-boot-starter/tree/main</url>
+    </scm>
+
 </project>
