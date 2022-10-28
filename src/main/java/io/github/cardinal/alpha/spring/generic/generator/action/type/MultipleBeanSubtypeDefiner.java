@@ -21,26 +21,17 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.cardinal.alpha.spring.generic.bind;
+package io.github.cardinal.alpha.spring.generic.generator.action.type;
 
-import io.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericComponent;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Repeatable;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-import org.springframework.stereotype.Component;
+import java.util.List;
+import net.bytebuddy.dynamic.DynamicType;
 
 /**
  *
  * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
  */
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Repeatable(MultipleGenericComponent.class)
-@Component
-public @interface GenericComponent {
+public interface MultipleBeanSubtypeDefiner {
     
-    Class<?>[] typeParameters();
+    List<DynamicType.Builder<?>> defineSubtypes(Class<?> beanCls);
     
 }

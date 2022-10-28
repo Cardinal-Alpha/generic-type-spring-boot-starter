@@ -21,9 +21,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.cardinal.alpha.spring.generic.generator.action;
+package io.github.cardinal.alpha.spring.generic.generator.action;
 
-import io.cardinal.alpha.spring.generic.exception.GenericControllerException;
+import io.github.cardinal.alpha.spring.generic.exception.GenericControllerException;
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -39,9 +39,9 @@ import net.bytebuddy.dynamic.DynamicType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import io.cardinal.alpha.spring.generic.bind.GenericRestController;
-import io.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericRestController;
-import io.cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
+import io.github.cardinal.alpha.spring.generic.bind.GenericRestController;
+import io.github.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericRestController;
+import io.github.cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
 
 /**
  *

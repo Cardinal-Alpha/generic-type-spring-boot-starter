@@ -21,26 +21,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.cardinal.alpha.spring.generic;
+package io.github.cardinal.alpha.spring.generic.bind;
 
-import io.cardinal.alpha.spring.generic.generator.MultipleBeanSubclassTypeGenerator;
-import io.cardinal.alpha.spring.generic.generator.action.GenericComponentCandidateFinder;
-import io.cardinal.alpha.spring.generic.generator.action.GenericComponentDefiner;
-import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
-import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.context.annotation.Bean;
+import io.github.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericComponent;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Repeatable;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
  */
-@AutoConfiguration
-public class GenericComponentAutoConfiguration {
+@Target({ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Repeatable(MultipleGenericComponent.class)
+@Component
+public @interface GenericComponent {
     
-    @Bean
-    public BeanFactoryPostProcessor genericComponentGenerator(){
-        return new MultipleBeanSubclassTypeGenerator(new GenericComponentCandidateFinder(),
-                                                        new GenericComponentDefiner());
-    }
+    Class<?>[] typeParameters();
     
 }

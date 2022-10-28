@@ -21,11 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.cardinal.alpha.spring.generic.generator.action;
+package io.github.cardinal.alpha.spring.generic.generator.action;
 
-import io.cardinal.alpha.spring.generic.bind.GenericComponent;
-import io.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericComponent;
-import io.cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
+import io.github.cardinal.alpha.spring.generic.bind.GenericComponent;
+import io.github.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericComponent;
+import io.github.cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 import java.util.List;

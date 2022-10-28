@@ -21,11 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.cardinal.alpha.spring.generic.generator;
+package io.github.cardinal.alpha.spring.generic.generator;
 
-import io.cardinal.alpha.spring.generic.exception.RuntimeTypeGeneratorException;
-import io.cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
-import io.cardinal.alpha.spring.generic.generator.action.type.TargetBeansClassExtractor;
+import io.github.cardinal.alpha.spring.generic.exception.RuntimeTypeGeneratorException;
+import io.github.cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
+import io.github.cardinal.alpha.spring.generic.generator.action.type.TargetBeansClassExtractor;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
 import org.springframework.beans.BeansException;

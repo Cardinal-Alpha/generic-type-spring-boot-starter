@@ -21,17 +21,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.cardinal.alpha.spring.generic.generator.action.type;
+package io.github.cardinal.alpha.spring.generic.exception;
 
-import java.util.List;
-import net.bytebuddy.dynamic.DynamicType;
+import org.springframework.beans.BeansException;
 
 /**
  *
  * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
  */
-public interface MultipleBeanSubtypeDefiner {
-    
-    List<DynamicType.Builder<?>> defineSubtypes(Class<?> beanCls);
+public class GenericControllerException extends BeansException{
+
+    public GenericControllerException(String msg) {
+        super(msg);
+    }
+
+    public GenericControllerException(String msg, Throwable cause) {
+        super(msg, cause);
+    }
     
 }

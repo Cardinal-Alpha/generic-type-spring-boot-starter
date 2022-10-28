@@ -21,14 +21,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.cardinal.alpha.spring.generic;
+package io.github.cardinal.alpha.spring.generic;
 
-import io.cardinal.alpha.spring.generic.generator.MultipleBeanSubclassTypeGenerator;
-import io.cardinal.alpha.spring.generic.generator.action.GenericControllerCandidateFinder;
-import io.cardinal.alpha.spring.generic.generator.action.GenericControllerDefiner;
+import io.github.cardinal.alpha.spring.generic.generator.MultipleBeanSubclassTypeGenerator;
+import io.github.cardinal.alpha.spring.generic.generator.action.GenericComponentCandidateFinder;
+import io.github.cardinal.alpha.spring.generic.generator.action.GenericComponentDefiner;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -36,24 +35,12 @@ import org.springframework.context.annotation.Bean;
  * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
  */
 @AutoConfiguration
-public class GenericRestControllerAutoConfiguration {
+public class GenericComponentAutoConfiguration {
     
     @Bean
-    @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
-    public GenericMvcMapping genericMvcMapping(){
-        return new GenericMvcMapping();
-    }
-    
-    @Bean
-    @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.REACTIVE)
-    public GenericReactiveMapping genericReactiveMapping(){
-        return new GenericReactiveMapping();
-    }
-    
-    @Bean
-    public BeanFactoryPostProcessor genericControllerGenerator(){
-        return new MultipleBeanSubclassTypeGenerator(new GenericControllerCandidateFinder(),
-                                                            new GenericControllerDefiner());
+    public BeanFactoryPostProcessor genericComponentGenerator(){
+        return new MultipleBeanSubclassTypeGenerator(new GenericComponentCandidateFinder(),
+                                                        new GenericComponentDefiner());
     }
     
 }

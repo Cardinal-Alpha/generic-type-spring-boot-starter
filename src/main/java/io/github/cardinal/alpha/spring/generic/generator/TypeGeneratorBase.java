@@ -21,20 +21,32 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.cardinal.alpha.spring.generic;
+package io.github.cardinal.alpha.spring.generic.generator;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.reactive.result.method.annotation.RequestMappingHandlerMapping;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.support.GenericBeanDefinition;
 
 /**
  *
  * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
  */
-public class GenericReactiveMapping {
+public abstract class TypeGeneratorBase {
     
-    @Bean
-    public RequestMappingHandlerMapping mvcMapping(){
-        return new RequestMappingHandlerMapping();
+    protected static List<Class<?>> generatedType = Collections.synchronizedList(new ArrayList<>());
+    
+    
+    protected BeanDefinition getBeanDefinition(Class<?> beanCls){
+        GenericBeanDefinition bd = new GenericBeanDefinition();
+        bd.setBeanClassName(beanCls.getName());
+        return bd;
     }
     
+    protected String defaultBeanName(Class<?> beanCls){
+        String originalName = beanCls.getSimpleName();
+        return String.join("", originalName.length() > 0 ? originalName.substring(0, 1).toLowerCase() : "",
+                                originalName.length() > 1 ? originalName.substring(1) : "");
+    }
 }

@@ -21,15 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.cardinal.alpha.spring.generic.generator.action;
+package io.github.cardinal.alpha.spring.generic.generator.action;
 
 import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
-import io.cardinal.alpha.spring.generic.bind.GenericRestController;
-import io.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericRestController;
-import io.cardinal.alpha.spring.generic.generator.action.type.TargetBeansClassExtractor;
+import io.github.cardinal.alpha.spring.generic.bind.GenericRestController;
+import io.github.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericRestController;
+import io.github.cardinal.alpha.spring.generic.generator.action.type.TargetBeansClassExtractor;
 
 /**
  *

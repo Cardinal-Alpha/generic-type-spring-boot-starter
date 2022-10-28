@@ -21,22 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.cardinal.alpha.spring.generic.exception;
+package io.github.cardinal.alpha.spring.generic;
 
-import org.springframework.beans.BeansException;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 /**
  *
  * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
  */
-public class RuntimeTypeGeneratorException extends BeansException{
-
-    public RuntimeTypeGeneratorException(String msg) {
-        super(msg);
-    }
-
-    public RuntimeTypeGeneratorException(String msg, Throwable cause) {
-        super(msg, cause);
+public class GenericMvcMapping {
+    
+    @Bean
+    public RequestMappingHandlerMapping mvcMapping(){
+        return new RequestMappingHandlerMapping();
     }
     
 }
