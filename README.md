@@ -24,7 +24,7 @@ Step :
 3. Just simply type `mvn clean install` and wait for build to finish
 
 ## How to Use
-Complete example of this starter implementation on MVC and Reactive backend could be found [here]("https://github.com/Cardinal-Alpha/generic-type-spring-example", "Generic Implementation Example")
+Complete example of this starter implementation on MVC and Reactive backend could be found [here](https://github.com/Cardinal-Alpha/generic-type-spring-example, "Generic Implementation Example")
 
 For any generic component you want to register, just apply `@GenericComponent` annotation bind on your class definition and set parameter type class you want to implement in order.
 ```java
