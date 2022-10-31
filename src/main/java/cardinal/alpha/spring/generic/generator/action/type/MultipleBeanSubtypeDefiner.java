@@ -21,14 +21,14 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.generator.action.type;
+package cardinal.alpha.spring.generic.generator.action.type;
 
 import java.util.List;
 import net.bytebuddy.dynamic.DynamicType;
 
 /**
  *
- * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * @author <a href="mailto:renaldi96.aldi@gmail.com">Cardinal Alpha</a>
  */
 public interface MultipleBeanSubtypeDefiner {
     

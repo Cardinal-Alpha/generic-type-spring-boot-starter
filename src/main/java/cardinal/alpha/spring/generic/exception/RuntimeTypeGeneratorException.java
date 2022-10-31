@@ -21,26 +21,22 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.bind;
+package cardinal.alpha.spring.generic.exception;
 
-import io.github.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericComponent;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Repeatable;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.BeansException;
 
 /**
  *
- * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * @author <a href="mailto:renaldi96.aldi@gmail.com">Cardinal Alpha</a>
  */
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Repeatable(MultipleGenericComponent.class)
-@Component
-public @interface GenericComponent {
-    
-    Class<?>[] typeParameters();
+public class RuntimeTypeGeneratorException extends BeansException{
+
+    public RuntimeTypeGeneratorException(String msg) {
+        super(msg);
+    }
+
+    public RuntimeTypeGeneratorException(String msg, Throwable cause) {
+        super(msg, cause);
+    }
     
 }

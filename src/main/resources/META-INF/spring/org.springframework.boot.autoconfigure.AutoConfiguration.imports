@@ -1,2 +1,2 @@
-io.github.cardinal.alpha.spring.generic.GenericRestControllerAutoConfiguration
-io.github.cardinal.alpha.spring.generic.GenericComponentAutoConfiguration
+cardinal.alpha.spring.generic.GenericRestControllerAutoConfiguration
+cardinal.alpha.spring.generic.GenericComponentAutoConfiguration

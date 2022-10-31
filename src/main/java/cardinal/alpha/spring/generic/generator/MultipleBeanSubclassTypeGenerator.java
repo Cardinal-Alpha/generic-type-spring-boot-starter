@@ -21,11 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.generator;
+package cardinal.alpha.spring.generic.generator;
 
-import io.github.cardinal.alpha.spring.generic.exception.RuntimeTypeGeneratorException;
-import io.github.cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
-import io.github.cardinal.alpha.spring.generic.generator.action.type.TargetBeansClassExtractor;
+import cardinal.alpha.spring.generic.exception.RuntimeTypeGeneratorException;
+import cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
+import cardinal.alpha.spring.generic.generator.action.type.TargetBeansClassExtractor;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
 import org.springframework.beans.BeansException;
@@ -35,7 +35,7 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 
 /**
  *
- * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * @author <a href="mailto:renaldi96.aldi@gmail.com">Cardinal Alpha</a>
  */
 public class MultipleBeanSubclassTypeGenerator extends TypeGeneratorBase implements BeanFactoryPostProcessor{
     

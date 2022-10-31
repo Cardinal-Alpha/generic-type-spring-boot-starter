@@ -21,11 +21,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.generator.action;
+package cardinal.alpha.spring.generic.generator.action;
 
-import io.github.cardinal.alpha.spring.generic.bind.GenericComponent;
-import io.github.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericComponent;
-import io.github.cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
+import cardinal.alpha.spring.generic.bind.GenericComponent;
+import cardinal.alpha.spring.generic.bind.multiple.MultipleGenericComponent;
+import cardinal.alpha.spring.generic.generator.action.type.MultipleBeanSubtypeDefiner;
 import java.lang.annotation.Annotation;
 import java.util.Arrays;
 import java.util.List;
@@ -39,7 +39,7 @@ import org.springframework.stereotype.Controller;
 
 /**
  *
- * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * @author <a href="mailto:renaldi96.aldi@gmail.com">Cardinal Alpha</a>
  */
 public class GenericComponentDefiner implements MultipleBeanSubtypeDefiner {
 

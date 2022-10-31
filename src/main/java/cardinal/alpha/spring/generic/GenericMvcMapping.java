@@ -21,28 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.bind;
+package cardinal.alpha.spring.generic;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Repeatable;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-import org.springframework.stereotype.Component;
-import io.github.cardinal.alpha.spring.generic.bind.multiple.MultipleGenericRestController;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
 /**
  *
- * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * @author <a href="mailto:renaldi96.aldi@gmail.com">Cardinal Alpha</a>
  */
-@Target({ElementType.TYPE})
-@Retention(RetentionPolicy.RUNTIME)
-@Repeatable(MultipleGenericRestController.class)
-@Component
-public @interface GenericRestController {
+public class GenericMvcMapping {
     
-    Class<?>[] typeParameters();
-    
-    String path();
+    @Bean
+    public RequestMappingHandlerMapping mvcMapping(){
+        return new RequestMappingHandlerMapping();
+    }
     
 }

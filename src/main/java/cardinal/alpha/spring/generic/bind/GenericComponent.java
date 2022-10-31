@@ -21,24 +21,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.bind.multiple;
+package cardinal.alpha.spring.generic.bind;
 
+import cardinal.alpha.spring.generic.bind.multiple.MultipleGenericComponent;
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Repeatable;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import org.springframework.stereotype.Component;
-import io.github.cardinal.alpha.spring.generic.bind.GenericRestController;
 
 /**
  *
- * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * @author <a href="mailto:renaldi96.aldi@gmail.com">Cardinal Alpha</a>
  */
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
+@Repeatable(MultipleGenericComponent.class)
 @Component
-public @interface MultipleGenericRestController {
+public @interface GenericComponent {
     
-    GenericRestController[] value();
+    Class<?>[] typeParameters();
     
 }

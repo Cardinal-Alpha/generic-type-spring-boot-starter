@@ -21,21 +21,21 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.exception;
+package cardinal.alpha.spring.generic.exception;
 
 import org.springframework.beans.BeansException;
 
 /**
  *
- * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * @author <a href="mailto:renaldi96.aldi@gmail.com">Cardinal Alpha</a>
  */
-public class RuntimeTypeGeneratorException extends BeansException{
+public class GenericControllerException extends BeansException{
 
-    public RuntimeTypeGeneratorException(String msg) {
+    public GenericControllerException(String msg) {
         super(msg);
     }
 
-    public RuntimeTypeGeneratorException(String msg, Throwable cause) {
+    public GenericControllerException(String msg, Throwable cause) {
         super(msg, cause);
     }
     

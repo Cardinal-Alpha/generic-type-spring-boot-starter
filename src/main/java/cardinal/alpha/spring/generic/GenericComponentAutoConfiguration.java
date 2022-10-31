@@ -21,32 +21,26 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package io.github.cardinal.alpha.spring.generic.generator;
+package cardinal.alpha.spring.generic;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import org.springframework.beans.factory.config.BeanDefinition;
-import org.springframework.beans.factory.support.GenericBeanDefinition;
+import cardinal.alpha.spring.generic.generator.MultipleBeanSubclassTypeGenerator;
+import cardinal.alpha.spring.generic.generator.action.GenericComponentCandidateFinder;
+import cardinal.alpha.spring.generic.generator.action.GenericComponentDefiner;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.context.annotation.Bean;
 
 /**
  *
- * @author Cardinal Alpha <renaldi96.aldi@gmail.com>
+ * @author <a href="mailto:renaldi96.aldi@gmail.com">Cardinal Alpha</a>
  */
-public abstract class TypeGeneratorBase {
+@AutoConfiguration
+public class GenericComponentAutoConfiguration {
     
-    protected static List<Class<?>> generatedType = Collections.synchronizedList(new ArrayList<>());
-    
-    
-    protected BeanDefinition getBeanDefinition(Class<?> beanCls){
-        GenericBeanDefinition bd = new GenericBeanDefinition();
-        bd.setBeanClassName(beanCls.getName());
-        return bd;
+    @Bean
+    public BeanFactoryPostProcessor genericComponentGenerator(){
+        return new MultipleBeanSubclassTypeGenerator(new GenericComponentCandidateFinder(),
+                                                        new GenericComponentDefiner());
     }
     
-    protected String defaultBeanName(Class<?> beanCls){
-        String originalName = beanCls.getSimpleName();
-        return String.join("", originalName.length() > 0 ? originalName.substring(0, 1).toLowerCase() : "",
-                                originalName.length() > 1 ? originalName.substring(1) : "");
-    }
 }
