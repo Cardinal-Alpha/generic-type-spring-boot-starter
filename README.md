@@ -43,3 +43,7 @@ public class CrudController<T, ID>{
     // Handler function and content omitted
 }
 ```
+
+## Version Release
+- 1.0.0
+    - Initial release, start of the journey
