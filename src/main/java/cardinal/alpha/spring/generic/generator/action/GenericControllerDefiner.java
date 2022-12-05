@@ -31,7 +31,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import net.bytebuddy.ByteBuddy;
 import net.bytebuddy.description.type.TypeDescription;
@@ -51,21 +50,7 @@ public class GenericControllerDefiner implements MultipleBeanSubtypeDefiner {
 
     private ByteBuddy bb = new ByteBuddy();
 
-    private Pattern pathCamelCasing = Pattern.compile("\\/[^\\/]+");
-
     private Map<String, Class<?>> registeredPath = new HashMap<>();
-
-    private String camelCasePath(String path) {
-        return pathCamelCasing.matcher(path)
-                .replaceAll(m -> {
-                    String capture = m.group();
-                    if (capture.length() > 1) {
-                        return String.join("", capture.substring(1, 2).toUpperCase(),
-                                capture.length() > 2 ? capture.substring(2) : "");
-                    }
-                    return capture;
-                });
-    }
 
     private RestController getControllerAnnotation() {
         return new RestController() {
@@ -160,10 +145,6 @@ public class GenericControllerDefiner implements MultipleBeanSubtypeDefiner {
                         throw new GenericControllerException(String.format("Generic controller without path detected on %s",
                                 beanCls.getName()));
                     }
-                    String generatedTypeName = String.join("",
-                                                    beanCls.getName(),
-                                                    camelCasePath(target.path())
-                    );
                     TypeDescription.Generic generatedType = TypeDescription.Generic.Builder
                                                                 .parameterizedType(
                                                                         beanCls,
@@ -171,7 +152,6 @@ public class GenericControllerDefiner implements MultipleBeanSubtypeDefiner {
                                                                 )
                                                                 .build();
                     return bb.subclass(generatedType)
-                            .name(generatedTypeName)
                             .annotateType(
                                     getControllerAnnotation(),
                                     getRequestMapping(target.path())
