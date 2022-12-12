@@ -45,5 +45,4 @@ public class CrudController<T, ID>{
 ```
 
 ## Version Release
-- 1.0.0
-    - Initial release, start of the journey
+All release version list moved to wiki [here](https://github.com/Cardinal-Alpha/generic-type-spring-boot-starter/wiki/Version-History)
